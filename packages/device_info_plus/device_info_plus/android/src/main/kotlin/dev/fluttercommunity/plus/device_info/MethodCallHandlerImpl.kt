@@ -82,11 +82,12 @@ internal class MethodCallHandlerImpl(
             build["availableRamSize"] = memoryInfo.availMem / 1048576L // Mb
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                build["serialNumber"] = try {
-                    Build.getSerial()
-                } catch (ex: SecurityException) {
-                    Build.UNKNOWN
-                }
+//                build["serialNumber"] = try {
+//                    Build.getSerial()
+//                } catch (ex: SecurityException) {
+//                    Build.UNKNOWN
+//                }
+                build["serialNumber"] = Build.UNKNOWN
             } else {
                 @Suppress("DEPRECATION")
                 build["serialNumber"] = Build.SERIAL
